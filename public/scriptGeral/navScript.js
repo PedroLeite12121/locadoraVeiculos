@@ -1,0 +1,47 @@
+async function loadNav() {
+  const nav = document.querySelector("nav");
+  const res = await fetch("/usuarios/getDadosUsuario"); 
+
+  if (!res.ok) {
+    nav.innerHTML = `
+      <div class="nomeNav"><a href="/main/index.html">Locadoras321</a></div>
+
+      <div class="mainNav">
+        <a href="/main/index.html">Home</a>
+        <a href="">Sobre nós</a>
+        <a href="">Contatos</a>
+      </div>
+
+      <div class="navOpcoesEntrada">
+        <a href="/cadastroVeiculo/cadastroVeiculo.html" id="addVeiculoNav">Adicionar Veículo</a>
+        <a href="/cadastroCliente/cadastroCliente.html" id="cadastroNav">Cadastro</a>
+        <a href="/loginCliente/loginCliente.html" id="loginNav">Login</a>
+
+      </div>`;
+  } else {
+    const user = await res.json();
+
+
+    nav.innerHTML = `
+      <div class="nomeNav"><a href="/main/index.html">Locadoras321</a></div>
+
+      <div class="mainNav">
+        <a href="/main/index.html">Home</a>
+        <a href="">Sobre nós</a>
+        <a href="">Contatos</a>
+      </div>
+
+      <div class="navOpcoesEntrada">
+      <a href="/cadastroVeiculo/cadastroVeiculo.html" id="addVeiculoNav">Adicionar Veículo</a>
+        <a href="#" id="logoutNav">Logout</a>
+      </div>`;
+
+      document.getElementById("logoutNav").addEventListener("click", async () => {
+      await fetch("/usuarios/logout", { method: "POST" });
+      location.reload(); 
+    });
+   ;
+  }
+}
+
+loadNav();

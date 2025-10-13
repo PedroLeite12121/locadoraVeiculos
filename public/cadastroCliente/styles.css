@@ -1,0 +1,9 @@
+html, body{
+    margin: 0;
+    padding: 0  
+}
+
+
+body{
+    background-image: linear-gradient(to left, rgb(43, 43, 43), rgb(116, 116, 116));
+}
