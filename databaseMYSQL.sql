@@ -1,42 +1,50 @@
-CREATE DATABASE db_locadora; 
+CREATE DATABASE db_locadora;
 USE db_locadora;
 
 CREATE TABLE tbl_cliente (
     idCliente INT NOT NULL AUTO_INCREMENT,
-    nome VARCHAR(30),
+    nome VARCHAR(30) NOT NULL,
     telefone VARCHAR(15) UNIQUE,
     email VARCHAR(50) UNIQUE,
-    senha VARCHAR(255),
+    senha VARCHAR(255) NOT NULL,
     PRIMARY KEY(idCliente)
 );
 
 CREATE TABLE tbl_locacao(
     idLocacao INT NOT NULL AUTO_INCREMENT,
-    dataLocacao DATE,
-    dataDevolucao DATE,
-    idCliente INT,
+    dataLocacao DATE NOT NULL,
+    dataDevolucao DATE NOT NULL,
+    idCliente INT NOT NULL,
     PRIMARY KEY (idLocacao),
     FOREIGN KEY (idCliente) REFERENCES tbl_cliente(idCliente)
 );
 
 CREATE TABLE tbl_veiculo (
     idVeiculo INT NOT NULL AUTO_INCREMENT,
-    modelo VARCHAR(50),
-    ano INT,
-    kms INT,
-    precoLocacao FLOAT,
+    modelo VARCHAR(50) NOT NULL,
+    ano INT NOT NULL,
+    kms INT NOT NULL,
+    precoLocacao DECIMAL(10,2) NOT NULL,
     imagemUrl VARCHAR(255),
-    idLocacao INT,
-    PRIMARY KEY (idVeiculo),
-    FOREIGN KEY (idLocacao) REFERENCES tbl_locacao(idLocacao)
+    PRIMARY KEY (idVeiculo)
+);
+
+CREATE TABLE tbl_locacao_item (
+    idLocacao INT NOT NULL,
+    idVeiculo INT NOT NULL,
+    PRIMARY KEY (idLocacao, idVeiculo),
+    FOREIGN KEY (idLocacao) REFERENCES tbl_locacao(idLocacao),
+    FOREIGN KEY (idVeiculo) REFERENCES tbl_veiculo(idVeiculo)
 );
 
 INSERT INTO tbl_veiculo (modelo, ano, kms, precoLocacao, imagemURL)
 VALUES 
 ('Toyota Corolla', 2020, '0', 180.00, 'https://media.istockphoto.com/id/1157655660/pt/foto/generic-red-suv-on-a-white-background-side-view.jpg?s=612x612&w=0&k=20&c=SwmLFK_KmRw0oQFCDscipI-N2gSj1PItzTkC69BdlpA='),
-('Jeep', 2001, '0', 200.00, 'https://www.jeep.com.br//renegade/asset/versoes/sahara/jeep-renegade-sahara-carbon-black.webp')
-('SUV', 2012, '0', 120.00, 'https://pemavel.com.br/wp-content/uploads/2024/08/imagick_convert.webp'),
-('Ferrari', 2001, '0', 2000.00, 'https://s2-oglobo.glbimg.com/W8JPalZuWuH3XMlLmLfPOqdsXEc=/0x0:1536x864/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2025/l/D/oO98jYQfuueFbrw2k0hg/ferrari-presents-the-f76-02-1536x864.jpg')
+('Jeep', 2001, '0', 200.00, 'https://www.jeep.com.br//renegade/asset/versoes/sahara/jeep-renegade-sahara-carbon-black.webp'),
+('SUV', 2012, '0', 120.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8tMFWRpKqlBGy72jrYEtfUVOa3vGtxW5MPg&s'),
+('Ferrari', 2001, '0', 2000.00, 'https://www.webmotors.com.br/imagens/prod/348762/FERRARI_ROMA_3.9_V8_TURBO_GASOLINA_F1DCT_34876209043394051.webp')
+
+
 
 
 
