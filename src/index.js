@@ -26,6 +26,8 @@ app.use('/carros', carrosRouter)
 const usuariosRouter = require('./rotas/usuarios.js')
 app.use('/usuarios', usuariosRouter)
 
+const locacaoRouter = require('./rotas/locacao.js')
+app.use('/locacao', locacaoRouter)
 
 
 app.listen(process.env.PORTA, () => {

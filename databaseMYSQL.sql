@@ -31,10 +31,12 @@ CREATE TABLE tbl_veiculo (
     FOREIGN KEY (idLocacao) REFERENCES tbl_locacao(idLocacao)
 );
 
-INSERT INTO tbl_veiculo (modelo, ano, kms, precoLocacao, imagemURL, idLocacao)
+INSERT INTO tbl_veiculo (modelo, ano, kms, precoLocacao, imagemURL)
 VALUES 
-('Toyota Corolla', 2020, '0', 180.00, 'https://media.istockphoto.com/id/1157655660/pt/foto/generic-red-suv-on-a-white-background-side-view.jpg?s=612x612&w=0&k=20&c=SwmLFK_KmRw0oQFCDscipI-N2gSj1PItzTkC69BdlpA=', NULL),
-('Toyota Corolla', 2020, '0', 180.00, 'https://media.istockphoto.com/id/1157655660/pt/foto/generic-red-suv-on-a-white-background-side-view.jpg?s=612x612&w=0&k=20&c=SwmLFK_KmRw0oQFCDscipI-N2gSj1PItzTkC69BdlpA=', NULL)
+('Toyota Corolla', 2020, '0', 180.00, 'https://media.istockphoto.com/id/1157655660/pt/foto/generic-red-suv-on-a-white-background-side-view.jpg?s=612x612&w=0&k=20&c=SwmLFK_KmRw0oQFCDscipI-N2gSj1PItzTkC69BdlpA='),
+('Jeep', 2001, '0', 200.00, 'https://www.jeep.com.br//renegade/asset/versoes/sahara/jeep-renegade-sahara-carbon-black.webp')
+('SUV', 2012, '0', 120.00, 'https://pemavel.com.br/wp-content/uploads/2024/08/imagick_convert.webp'),
+('Ferrari', 2001, '0', 2000.00, 'https://s2-oglobo.glbimg.com/W8JPalZuWuH3XMlLmLfPOqdsXEc=/0x0:1536x864/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2025/l/D/oO98jYQfuueFbrw2k0hg/ferrari-presents-the-f76-02-1536x864.jpg')
 
 
 

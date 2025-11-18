@@ -15,9 +15,8 @@ nav{
     justify-content: flex-start;
     background-color: rgb(41, 41, 41);
     margin: 0;
-    height: 6vh;
-    padding-left: 2vh;
-    padding-right: 2vh;
+    padding: 1.5vh 2vh 1.5vh 2vh;
+    
 }
 
 .nomeNav{
@@ -26,7 +25,7 @@ nav{
 }
 
 #addVeiculoNav{
-    border-radius: 2vh;
+    border-radius: 1vh;
     padding: 1vh;
     padding-left: 3vh;
     padding-right: 3vh;
@@ -45,7 +44,7 @@ nav{
 }
 
 #cadastroNav{
-    border-radius: 2vh;
+    border-radius: 1vh;
     padding: 1vh;
     padding-left: 3vh;
     padding-right: 3vh;
@@ -61,7 +60,7 @@ nav{
 
 #loginNav{
     background-color: rgb(56, 56, 56);
-    border-radius: 2vh;
+    border-radius: 1vh;
     padding: 1vh;
     padding-left: 3vh;
     padding-right: 3vh;

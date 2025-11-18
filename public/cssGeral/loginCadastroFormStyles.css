@@ -9,7 +9,7 @@ form{
     flex-direction: column;
     background-image: linear-gradient(35deg, rgb(20, 20, 20), rgb(44, 44, 44));
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    border-radius: 1vh;
+    border-radius: 3vh;
     width: 25%;
     margin-top: 1vh;
     margin-left: auto;
@@ -25,7 +25,7 @@ form::placeholder{
 
 form a{
     margin-top: 4vh;
-    font-size: 3vh;
+    font-size: 2.8vh;
     margin-left: auto;
     margin-right: auto;
     color: rgb(255, 255, 255);
@@ -77,4 +77,5 @@ form button{
     margin-right: auto;
     padding: 2vh;
     border-radius: 2vh;
+    cursor: pointer;
 }

@@ -21,7 +21,7 @@ async function carregarCarros() {
 
             <div class="midInfoCard">
                 <img src="${carro.imagemUrl}">
-                <p id="preco">R$${carro.precoLocacao},00/semana </p>
+                <p id="preco">R$${carro.precoLocacao}/semana </p>
             </div>
 
             <div class="bottomInfoCard">

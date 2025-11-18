@@ -51,9 +51,8 @@
 }
 
 .card img{
-    border-radius: 3vh;
-    width: 30vh;
-    height: 30vh;
+    height: 25vh;
+    height: 25vh;
     object-fit: contain;
 }
 
@@ -64,6 +63,7 @@
 }
 
 #ano {
+    font-size: 3vh;
     margin-top: 0 ;
     margin-left: 2vh;
     text-align: left;
@@ -111,6 +111,7 @@
 
 
 .container h1{
+    font-size: 5vh;
     margin-top: 5vh;
     margin-bottom: 0;
     margin-left: 10vh;
