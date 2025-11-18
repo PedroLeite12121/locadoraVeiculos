@@ -4,18 +4,18 @@ async function loadNav() {
 
   if (!res.ok) {
     nav.innerHTML = `
-      <div class="nomeNav"><a href="/main/index.html">Locadoras321</a></div>
+      <div class="nomeNav"><a href="/abas/main/index.html">Locadoras321</a></div>
 
       <div class="mainNav">
-        <a href="/main/index.html">Home</a>
+        <a href="/abas/main/index.html">Home</a>
         <a href="">Sobre nós</a>
         <a href="">Contatos</a>
       </div>
 
       <div class="navOpcoesEntrada">
-        <a href="/cadastroVeiculo/cadastroVeiculo.html" id="addVeiculoNav">Adicionar Veículo</a>
-        <a href="/cadastroCliente/cadastroCliente.html" id="cadastroNav">Cadastro</a>
-        <a href="/loginCliente/loginCliente.html" id="loginNav">Login</a>
+        <a href="/abas/cadastroVeiculo/cadastroVeiculo.html" id="addVeiculoNav">Adicionar Veículo</a>
+        <a href="/abas/cadastroCliente/cadastroCliente.html" id="cadastroNav">Cadastro</a>
+        <a href="/abas/loginCliente/loginCliente.html" id="loginNav">Login</a>
 
       </div>`;
   } else {
@@ -23,16 +23,16 @@ async function loadNav() {
 
 
     nav.innerHTML = `
-      <div class="nomeNav"><a href="/main/index.html">Locadoras321</a></div>
+      <div class="nomeNav"><a href="/abas/main/index.html">Locadoras321</a></div>
 
       <div class="mainNav">
-        <a href="/main/index.html">Home</a>
+        <a href="/abas/main/index.html">Home</a>
         <a href="">Sobre nós</a>
         <a href="">Contatos</a>
       </div>
 
       <div class="navOpcoesEntrada">
-      <a href="/cadastroVeiculo/cadastroVeiculo.html" id="addVeiculoNav">Adicionar Veículo</a>
+      <a href="/abas/cadastroVeiculo/cadastroVeiculo.html" id="addVeiculoNav">Adicionar Veículo</a>
         <a href="#" id="logoutNav">Logout</a>
       </div>`;
 

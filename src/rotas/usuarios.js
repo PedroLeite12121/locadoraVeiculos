@@ -17,7 +17,7 @@ router.post("/cadastroUsuario", async (req, res) => {
     const [result] = await conn.query(sql, [nome, telefone, email, senhaHash]);
 
     if (result.affectedRows > 0) {
-      res.status(201).json({ message: "Cliente cadastrado com sucesso", id: result.insertId });
+      res.status(201).json({ message: "Cliente cadastrado com sucesso. Por favor, realize o login", id: result.insertId });
     } else {
       res.status(400).json({ error: "Erro ao cadastrar cliente", message: "Erro inesperado"});
     }
@@ -51,7 +51,7 @@ router.post("/loginUsuario", async (req, res) => {
         email: user.email
       };
 
-      return res.json({ success: true, redirect: "/main/index.html" });
+      return res.json({ success: true, redirect: "/abas/main/index.html" });
       
     } else {
       res.status(401).json({ error: "Senha incorreta", message: "Login inválido" });

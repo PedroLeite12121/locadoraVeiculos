@@ -41,7 +41,6 @@ router.get("/:idVeiculo", async (req, res) => {
   try {
     const pool = await conexao();
     const [cars] = await pool.query("SELECT * FROM tbl_veiculo WHERE idVeiculo = ?", [req.params.idVeiculo]);
-    console.log(req.params.idVeiculo)
 
     res.json(cars);
   } catch (err) {

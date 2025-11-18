@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
-    res.sendFile(path.resolve("public/main/index.html"));
+    res.sendFile(path.resolve("public/abas/main/index.html"));
 });
 
 const carrosRouter = require('./rotas/carros.js')

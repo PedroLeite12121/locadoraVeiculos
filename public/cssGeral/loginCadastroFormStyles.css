@@ -1,3 +1,13 @@
+html, body{
+    margin: 0;
+    padding: 0  
+}
+
+
+body{
+    background-image: linear-gradient(to left, rgb(43, 43, 43), rgb(116, 116, 116));
+}
+
 form{
     margin-bottom: 1vh;
     padding-top: 3vh;
@@ -11,7 +21,7 @@ form{
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 3vh;
     width: 25%;
-    margin-top: 1vh;
+    margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
 
