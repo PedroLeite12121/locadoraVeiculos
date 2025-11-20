@@ -19,9 +19,9 @@ router.post("/cadastroUsuario", async (req, res) => {
 
     if (result.affectedRows > 0) {
       req.session.user = {
-        id: result.idCliente,
-        nome: result.nome,
-        email: result.email
+        id: result.insertId,
+        nome: nome,
+        email: email
       };
 
       res.status(201).json({ success: true, message: "Cliente cadastrado com sucesso. OK para prosseguir", redirect: "/abas/main/index.html"});
