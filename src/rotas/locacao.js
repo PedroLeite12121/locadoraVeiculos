@@ -19,7 +19,11 @@ router.post("/criarLocacao", async (req, res) => {
     }
 
     const sql = "INSERT INTO tbl_locacao (dataLocacao, dataDevolucao, idCliente, idVeiculo) VALUES (?, ?, ?, ?)";
-    const [result] = await conn.query(sql, [new Date(), '2025-11-20', idCliente, idVeiculo]);
+
+    const dataFinal = new Date();
+    dataFinal.setDate(dataFinal.getDate() + 7)
+    
+    const [result] = await conn.query(sql, [new Date(), dataFinal, idCliente, idVeiculo]);
     
     if (result.affectedRows > 0) {
       res.status(201).json({success: true, message: "Carro alugado com sucesso"});
