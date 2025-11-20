@@ -16,8 +16,16 @@ router.post("/cadastroUsuario", async (req, res) => {
     const sql = "INSERT INTO tbl_cliente (nome, telefone, email, senha) VALUES (?, ?, ?, ?)";
     const [result] = await conn.query(sql, [nome, telefone, email, senhaHash]);
 
+
     if (result.affectedRows > 0) {
-      res.status(201).json({ message: "Cliente cadastrado com sucesso. Por favor, realize o login", id: result.insertId });
+      req.session.user = {
+        id: result.idCliente,
+        nome: result.nome,
+        email: result.email
+      };
+
+      res.status(201).json({ success: true, message: "Cliente cadastrado com sucesso. OK para prosseguir", redirect: "/abas/main/index.html"});
+
     } else {
       res.status(400).json({ error: "Erro ao cadastrar cliente", message: "Erro inesperado"});
     }
@@ -51,7 +59,7 @@ router.post("/loginUsuario", async (req, res) => {
         email: user.email
       };
 
-      return res.json({ success: true, redirect: "/abas/main/index.html" });
+      return res.json({ success: true, redirect: "/abas/main/index.html", message: "Login realizado. OK para prosseguir" });
       
     } else {
       res.status(401).json({ error: "Senha incorreta", message: "Login inválido" });

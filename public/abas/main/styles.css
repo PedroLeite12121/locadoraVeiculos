@@ -1,7 +1,7 @@
 
 .card{
-    max-width: 26vw;
-    min-width: 26vw;
+    max-width: 23vw;
+    min-width: 23vw;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -49,8 +49,8 @@
 }
 
 .card img{
-    height: 25vh;
-    height: 25vh;
+    height: 22vh;
+    height: 22vh;
     object-fit: contain;
 }
 
@@ -103,7 +103,7 @@
     overflow-y: hidden;
     display: flex;
     flex-direction: row;
-    gap: 4vh;
+    gap: 8vh;
     overflow-x: scroll;
 }
 

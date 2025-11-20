@@ -24,7 +24,7 @@ async function carregarCarros() {
           </div>
 
           <div class="bottomInfoCard">
-              <a href="/abas/informacoesVeiculo/informacoesVeiculo.html?veiculoId=${carro.idVeiculo}"> Quero Esse </a>
+              <a href="/abas/informacoesVeiculo/informacoesVeiculo.html?veiculoId=${carro.idVeiculo}"> Alugar </a>
           </div>`;
 
           container.appendChild(card);

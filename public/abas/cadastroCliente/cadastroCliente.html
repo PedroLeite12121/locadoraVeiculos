@@ -18,7 +18,7 @@
         <p>Email</p>
         <input type="email" name="email" placeholder="Digite seu email" required><br>
         <p>Número de Telefone</p>
-        <input type="number" name="telefone" placeholder="Digites seu número de Telefone" required><br>
+        <input type="number" name="telefone" placeholder="Digite seu número de Telefone" required><br>
         <p>Senha</p>
         <input type="password" name="senha" placeholder="Digite sua senha" required><br>
         <a href="/abas/loginCliente/loginCliente.html">Já sou cliente</a>
@@ -39,10 +39,17 @@
                 body: JSON.stringify(formData)
             });
 
-            const result = await res.json();
-            alert(result.message);
+            const data = await res.json();
+
+            if (data.success) {
+                alert(data.message)
+                window.location.href = data.redirect; 
+            } else {
+                alert(data.error || data.message);
+            }
         });
     </script>
+
     <script src="/scriptGeral/navScript.js"></script>
 </body>
 </html>

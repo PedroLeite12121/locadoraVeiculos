@@ -28,7 +28,7 @@ router.post("/cadastroCarro", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const pool = await conexao();
-    const [cars] = await pool.query("SELECT * FROM tbl_veiculo WHERE idVeiculo NOT IN (SELECT idVeiculo FROM tbl_locacao_item)");
+    const [cars] = await pool.query("SELECT * FROM tbl_veiculo WHERE idVeiculo NOT IN (SELECT idVeiculo FROM tbl_locacao)");
 
     res.json(cars);
   } catch (err) {

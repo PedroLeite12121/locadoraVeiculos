@@ -10,14 +10,6 @@ CREATE TABLE tbl_cliente (
     PRIMARY KEY(idCliente)
 );
 
-CREATE TABLE tbl_locacao(
-    idLocacao INT NOT NULL AUTO_INCREMENT,
-    dataLocacao DATE NOT NULL,
-    dataDevolucao DATE NOT NULL,
-    idCliente INT NOT NULL,
-    PRIMARY KEY (idLocacao),
-    FOREIGN KEY (idCliente) REFERENCES tbl_cliente(idCliente)
-);
 
 CREATE TABLE tbl_veiculo (
     idVeiculo INT NOT NULL AUTO_INCREMENT,
@@ -29,13 +21,17 @@ CREATE TABLE tbl_veiculo (
     PRIMARY KEY (idVeiculo)
 );
 
-CREATE TABLE tbl_locacao_item (
-    idLocacao INT NOT NULL,
+CREATE TABLE tbl_locacao(
+    idLocacao INT NOT NULL AUTO_INCREMENT,
+    dataLocacao DATE NOT NULL,
+    dataDevolucao DATE NOT NULL,
+    idCliente INT NOT NULL,
     idVeiculo INT NOT NULL,
-    PRIMARY KEY (idLocacao, idVeiculo),
-    FOREIGN KEY (idLocacao) REFERENCES tbl_locacao(idLocacao),
-    FOREIGN KEY (idVeiculo) REFERENCES tbl_veiculo(idVeiculo)
+    PRIMARY KEY (idLocacao),
+    FOREIGN KEY (idVeiculo) REFERENCES tbl_veiculo(idVeiculo),
+    FOREIGN KEY (idCliente) REFERENCES tbl_cliente(idCliente)
 );
+
 
 INSERT INTO tbl_veiculo (modelo, ano, kms, precoLocacao, imagemURL)
 VALUES 
@@ -43,8 +39,3 @@ VALUES
 ('Jeep', 2001, '0', 200.00, 'https://www.jeep.com.br//renegade/asset/versoes/sahara/jeep-renegade-sahara-carbon-black.webp'),
 ('SUV', 2012, '0', 120.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8tMFWRpKqlBGy72jrYEtfUVOa3vGtxW5MPg&s'),
 ('Ferrari', 2001, '0', 2000.00, 'https://www.webmotors.com.br/imagens/prod/348762/FERRARI_ROMA_3.9_V8_TURBO_GASOLINA_F1DCT_34876209043394051.webp')
-
-
-
-
-
