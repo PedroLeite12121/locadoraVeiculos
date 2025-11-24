@@ -156,3 +156,7 @@
     overflow-y: scroll;
     padding: 4vh;
 }
+
+.locacoesLista div{
+    font-size: 3vh;
+}

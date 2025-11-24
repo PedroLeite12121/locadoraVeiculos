@@ -11,7 +11,7 @@ form{
     box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
     border-radius: 1vh;
     max-width: 30%;
-    margin-top: 2vh;
+    margin-top: 1vh;
     margin-left: 5vh;
     margin-bottom: 2vh;
 }
@@ -30,13 +30,16 @@ form p{
 }
 
 form input{
+    font-size: 2.4vh;
     padding-left: 1vh;
     padding-right: 1vh;
+    padding-bottom: 0.4vh;
+    padding-top: 0.4vh;
     border: 0;
     border-radius: 1vh;
     background-color: rgb(255, 255, 255);
     height: 5vh;
-    margin-bottom: 2vh;
+    margin-bottom:3vh;
 }
 
 form input:last-of-type{
