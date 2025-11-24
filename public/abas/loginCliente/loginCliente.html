@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/cssGeral/navStyles.css">
+    <link rel="stylesheet" href="/cssGeral/loginCadastroFormStyles.css">
+</head>
+<body>
+    <nav></nav>
+    
+    <form id="clienteForm">
+        <h1>Login</h1>
+        <p>Email</p>
+        <input type="email" name="email" placeholder="Digite seu email" required><br>
+        <p>Senha</p>
+        <input type="password" name="senha" placeholder="Digite sua senha" required><br>
+        <a href="/abas/cadastroCliente/cadastroCliente.html">Ainda não sou cliente</a>
+        <button type="submit">Login</button>
+    </form>
+
+
+    <script>
+        const form = document.getElementById("clienteForm");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = Object.fromEntries(new FormData(form));
+
+            const res = await fetch("/usuarios/loginUsuario", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                alert(data.message)
+                window.location.href = data.redirect; 
+            } else {
+                alert(data.error || data.message);
+            }
+        });
+    </script>
+    
+    <script src="/scriptGeral/navScript.js"></script>
+</body>
+</html>

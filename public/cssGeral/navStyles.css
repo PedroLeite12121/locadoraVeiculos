@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+nav a{
+    text-decoration: none;
+    margin: 0;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+nav{
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(41, 41, 41);
+    margin: 0;
+    padding: 1.5vh 2vh 1.5vh 2vh;
+    
+}
+
+.nomeNav{
+    font-size: 3vh;
+    margin-left: 5vh;
+}
+
+#addVeiculoNav{
+    border-radius: 1vh;
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    background-color: rgb(255, 255, 255);
+    margin-right: 5vh;
+    color: black;
+}
+
+.navOpcoesEntrada{
+    align-items: center;
+    gap: 2vh;
+    display: flex;
+    justify-content: flex-end;
+    right: 2vh;
+    position: absolute
+}
+
+#cadastroNav{
+    border-radius: 1vh;
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    background-color: rgb(56, 56, 56);
+}
+
+.mainNav{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    gap: 10vh;
+}
+
+#loginNav{
+    background-color: rgb(56, 56, 56);
+    border-radius: 1vh;
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+}
+
+#logoutNav{
+    background-color: rgb(56, 56, 56);
+    border-radius: 1vh;
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+}
+
+html, body{
+    margin: 0;
+    padding: 0  
+}
+
+html{
+    font-family: 'Inter';
+    overflow-y: scroll;
+}
+

@@ -1,0 +1,158 @@
+.content{
+    position: relative;
+    min-height: 20vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3vh;
+    padding-bottom: 4vh;
+    margin-top: 7vh;
+    border-radius: 3vh;
+}
+
+.container{
+    padding-bottom: 10vh;
+    border-bottom: 1vh solid rgb(70, 70, 70);
+    align-items: center;
+    gap: 15vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.container #imagemVeiculo{
+    border-radius: 2vh;
+    height: 35vh;
+}
+
+.container h1{
+    font-size: 6vh;
+    margin-top: 0;
+}
+
+#informacoes{
+    display: flex;
+    flex-direction: column;
+}
+
+#historico{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    border-radius: 1vh;
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8vh;
+    height: 8vh;
+    position: absolute;
+    top: 4vh;
+    left: 4vh;
+    transition: 0.5s;
+    border: 0;
+}
+
+#historico:hover{
+    background-color: rgb(26, 26, 26);
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+#historico img{
+    width: 6vh;
+}
+
+#informacoes button{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border: 0;
+    padding: 2vh 4vh 2vh 4vh;
+    font-size: 3.8vh;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2vh;
+    transition: 0.5s;
+    color: white;
+    background-color: rgb(41, 41, 41);
+}
+
+#informacoes button:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+    background-color: rgb(105, 105, 105);
+}
+
+
+
+#precoLocacao #preco{
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.detalhesExtras{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+    border-radius: 1vh;
+    background-color: rgb(240, 240, 240);
+    margin-top: 10vh;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detalhesExtras p{
+    margin: 0;
+}
+
+#detalhesIn{
+    border-right: 3px solid rgb(129, 129, 129);
+    border-left: 3px solid rgb(129, 129, 129);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#detalhesIn #detalhesTitulo{
+    text-align: center;
+    width: 15vw;
+    font-size: 3vh;
+    font-weight: normal;
+}
+
+#detalhesIn p{
+    font-weight: bolder;
+    font-size: 2.6vh;
+    padding: 2vh;
+}
+
+.historicoDeLocacoes{
+    gap: 1vh;
+    flex-direction: column;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.historicoDeLocacoes p{
+    font-size: 5vh;
+    font-weight: bolder;
+    margin-top: 0;
+    margin-bottom: 2vh;
+}
+
+.locacoesLista{
+    min-width: 20vw;
+    flex-direction: column;
+    display: flex;
+    gap: 2vh;
+    border-radius: 2vh;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    min-height: 20vh;
+    max-height: 20vh;
+    overflow-y: scroll;
+    padding: 4vh;
+}

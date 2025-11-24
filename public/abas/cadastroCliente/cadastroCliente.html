@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/cssGeral/navStyles.css">
+    <link rel="stylesheet" href="/cssGeral/loginCadastroFormStyles.css">
+</head>
+<body>
+    <nav></nav>
+
+    <form id="clienteForm">
+        <h1>Cadastro</h1>
+
+        <p>Nome</p>
+        <input type="text" name="nome" placeholder="Digite seu nome" required><br>
+        <p>Email</p>
+        <input type="email" name="email" placeholder="Digite seu email" required><br>
+        <p>Número de Telefone</p>
+        <input type="number" name="telefone" placeholder="Digite seu número de Telefone" required><br>
+        <p>Senha</p>
+        <input type="password" name="senha" placeholder="Digite sua senha" required><br>
+        <a href="/abas/loginCliente/loginCliente.html">Já sou cliente</a>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("clienteForm");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = Object.fromEntries(new FormData(form));
+
+            const res = await fetch("/usuarios/cadastroUsuario", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                alert(data.message)
+                window.location.href = data.redirect; 
+            } else {
+                alert(data.error || data.message);
+            }
+        });
+    </script>
+
+    <script src="/scriptGeral/navScript.js"></script>
+</body>
+</html>

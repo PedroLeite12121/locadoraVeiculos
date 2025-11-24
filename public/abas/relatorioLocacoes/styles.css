@@ -1,0 +1,28 @@
+
+
+.container{
+    border-radius: 2vh;
+    gap: 4vh;
+    margin-top: 5vh;
+    overflow-y: scroll;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 4vh;
+}
+
+.container .card{
+    padding-bottom: 1vh;
+    border-bottom: 0.2vh solid black;
+}
+
+#titulo{
+    font-size: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 0;
+    text-align: center;
+}

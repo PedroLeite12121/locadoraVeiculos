@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações</title>
+    <link rel="stylesheet" href="/cssGeral/navStyles.css">
+    <link rel="stylesheet" href="/abas/informacoesVeiculo/style.css">
+</head>
+<body>
+    <nav></nav>
+
+    <div class="content">
+        <button id="historico"><img src="/abas/informacoesVeiculo/images/historico.png" alt=""></button>
+        <div class="container">
+            <img src="" alt=""  id="imagemVeiculo">
+            <div id="informacoes">
+                <h1 id="modeloVeiculo">Modelo do Veículo</h1>
+                <div id="precoLocacao">
+                    <p id="preco"></p>
+                    <button id="botao">Alugar veículo</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="detalhesExtras">
+            <div id="detalhesIn">
+                <p id="detalhesTitulo">Ano</p>
+                <p id="anoVeiculo"></p>
+            </div>
+
+            <div id="detalhesIn">
+                <p id="detalhesTitulo">Quilometragem</p>
+                <p id="kmVeiculo"></p>
+            </div>
+
+            <div id="detalhesIn">
+                <p id="detalhesTitulo">Garantia</p>
+                <p id="garantiaVeiculo">Proteção Completa</p>
+            </div>
+        </div>
+
+        <div class="historicoDeLocacoes">
+            <p>Histórico de Locações</p>
+
+            <div class="locacoesLista"></div>
+        </div>
+    </div>
+
+    <script>
+    const button = document.getElementById("botao");
+
+    button.addEventListener("click", async () => {
+        try {
+            const resUser = await fetch("/usuarios/getDadosUsuario");
+            const dataUser = await resUser.json();
+
+            if (!dataUser.id) {
+                alert("Você precisa estar logado para alugar um veículo.");
+                return;
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            const carId = params.get('veiculoId');
+
+            const res = await fetch("/locacao/criarLocacao", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idCliente: dataUser.id,
+                    idVeiculo: carId
+                })
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                alert(data.message);
+            } else {
+                alert(data.error || "Erro ao alugar carro");
+            }
+
+            
+        } catch (err) {
+            alert("Erro inesperado.");
+        }
+    });
+    </script>
+
+    <script src="/abas/informacoesVeiculo/script.js"></script>
+    <script src="/scriptGeral/navScript.js"></script>
+</body>
+</html>

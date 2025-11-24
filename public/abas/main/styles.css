@@ -1,0 +1,116 @@
+
+.card{
+    max-width: 23vw;
+    min-width: 23vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s ease-in-out;
+    padding-bottom: 2vh;
+}
+
+.bottomInfoCard a:hover{
+    background-color: rgb(105, 105, 105);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.topInfoCard{
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.midInfoCard{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottomInfoCard a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(231, 231, 231);
+    width: 70%;
+    padding: 1.5vh;
+    margin: 0 auto;
+    border-radius: 2vh;
+    font-size: 3.3vh;
+    font-weight: bold;
+}
+
+.card img{
+    height: 22vh;
+    height: 22vh;
+    object-fit: contain;
+}
+
+.infoCard {
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#ano {
+    font-size: 3vh;
+    margin-top: 0 ;
+    margin-left: 2vh;
+    text-align: left;
+}
+
+#preco{
+    font-size: 3vh;
+}
+
+#kms{
+    min-width: 5vw;
+    padding: 1vh;
+    border-bottom-left-radius: 1vh;
+    border-top-left-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(92, 92, 92);
+    color: white;
+    font-size: 3vh;
+}
+
+#modelo{
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2vh;
+    font-size: 3vh;
+    font-weight: bolder;
+}
+
+
+#allCard{
+    padding: 3vh;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1vh;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 8vh;
+    overflow-x: scroll;
+}
+
+
+.container h1{
+    font-size: 5vh;
+    margin-top: 8vh;
+    margin-bottom: 0;
+    margin-left: 10vh;
+}
